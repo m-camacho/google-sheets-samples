@@ -4,13 +4,14 @@ const process = require("process");
 const { authenticate } = require("@google-cloud/local-auth");
 const { google } = require("googleapis");
 
-// If modifying these scopes, delete token.json.
-const SCOPES = ["https://www.googleapis.com/auth/spreadsheets"];
 // The file token.json stores the user's access and refresh tokens, and is
 // created automatically when the authorization flow completes for the first
 // time.
 const TOKEN_PATH = path.join(process.cwd(), "token.json");
 const CREDENTIALS_PATH = path.join(process.cwd(), "credentials.json");
+
+// If modifying these scopes, delete token.json.
+const SCOPES = ["https://www.googleapis.com/auth/spreadsheets"];
 
 const spreadsheetId = "1xUS59aImQCHCfyhrM4MH_8yar55fkPvTHBh5Cw6nQuw";
 const sheetName = "data";
@@ -32,7 +33,7 @@ async function loadSavedCredentialsIfExist() {
 }
 
 /**
- * Serializes credentials to a file comptible with GoogleAUth.fromJSON.
+ * Serializes credentials to a file compatible with GoogleAUth.fromJSON.
  *
  * @param {OAuth2Client} client
  * @return {Promise<void>}
@@ -74,7 +75,7 @@ async function authorize() {
  * @see https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
  * @param {google.auth.OAuth2} auth The authenticated Google OAuth client.
  */
-async function listMajors(auth) {
+async function listTelescopeNetwork(auth) {
   const sheets = google.sheets({ version: "v4", auth });
   const res = await sheets.spreadsheets.values.get({
     spreadsheetId,
@@ -92,7 +93,7 @@ async function listMajors(auth) {
   });
 }
 
-authorize().then(listMajors).catch(console.error);
+authorize().then(listTelescopeNetwork).catch(console.error);
 
 // scopes: "https://www.googleapis.com/auth/cloud-platform",
 // scopes: 'https://www.googleapis.com/auth/spreadsheets'
