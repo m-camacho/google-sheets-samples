@@ -11,11 +11,15 @@ const TOKEN_PATH = path.join(process.cwd(), "auth/token.json");
 const CREDENTIALS_PATH = path.join(process.cwd(), "auth/credentials.json");
 
 // If modifying these scopes, delete token.json.
-const SCOPES = ["https://www.googleapis.com/auth/spreadsheets"];
+const SCOPES = [
+  "https://www.googleapis.com/auth/drive",
+  "https://www.googleapis.com/auth/drive.file",
+  "https://www.googleapis.com/auth/spreadsheets",
+];
 
 const spreadsheetId = "1xUS59aImQCHCfyhrM4MH_8yar55fkPvTHBh5Cw6nQuw";
-const sheetName = "data";
-const range = `${sheetName}!A2:C`;
+const sheetName = "playground";
+const range = `${sheetName}!A:C`;
 
 /**
  * Reads previously authorized credentials from the save file.
@@ -70,30 +74,52 @@ async function authorize() {
   return client;
 }
 
-/**
- * Prints the names and majors of students in a sample spreadsheet:
- * @see https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
- * @param {google.auth.OAuth2} auth The authenticated Google OAuth client.
- */
-async function listTelescopeNetwork(auth) {
+async function writeUserData(auth) {
   const sheets = google.sheets({ version: "v4", auth });
-  const res = await sheets.spreadsheets.values.get({
+  const request = {
     spreadsheetId,
-    range,
-  });
-  const rows = res.data.values;
-  if (!rows || rows.length === 0) {
-    console.log("No data found.");
-    return;
-  }
+    range: "playground!A:C",
+    valueInputOption: "RAW",
+    // insertDataOption: "INSERT_ROWS",
+    resource: {
+      //   majorDimension: "ROWS",
+      values: [["mario", "camacho", "mario.camacho2@gmail.com"]],
+    },
+    auth,
+  };
 
-  console.log("Name, email:");
-  rows.forEach((row) => {
-    console.log(`${row[0]} ${row[1]}, ${row[2]}`);
-  });
+  try {
+    const response = (await sheets.spreadsheets.values.append(request)).data;
+    // TODO: Change code below to process the `response` object:
+    console.log(JSON.stringify(response, null, 2));
+  } catch (err) {
+    console.error(err);
+  }
 }
 
-authorize().then(listTelescopeNetwork).catch(console.error);
+function updateValues(auth) {
+  const sheets = google.sheets({ version: "v4", auth });
+  const values = [["mario", "camacho", "mario.camacho2@gmail.com"]];
+  try {
+    sheets.spreadsheets.values
+      .append({
+        spreadsheetId,
+        range: "playground!A:C",
+        valueInputOption: "RAW",
+        resource: {
+          values,
+        },
+      })
+      .then((response) => {
+        console.log(JSON.stringify(response.data, null, 2));
+      });
+  } catch (err) {
+    console.log(JSON.stringify(err, null, 2));
+    return;
+  }
+}
+
+authorize().then(updateValues).catch(console.error);
 
 // scopes: "https://www.googleapis.com/auth/cloud-platform",
 // scopes: 'https://www.googleapis.com/auth/spreadsheets'

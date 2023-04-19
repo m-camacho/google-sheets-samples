@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "oursky-test-384118",
+  "private_key_id": "a73a7a8c4e115b0670958b1d673e5e320077f12f",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCcNdU9+YLQzQCu\n5BmvBFbRmCXfiw/dQZWEPZTK876p0E6CV48yobUidJy6sIMhnrlKrHELdjhjJYOl\n/N6BDDHf4dm/5KzQKXhTbmDQkE8IOODzgYNQ1hFNVOeaakKjvF810dV85sQ7m+hU\nOjHw69x9HNSSTyWMmwZfiwM0gfebGxlNTSMIToRTGsOzsHy2GfE/q3FIJ8BX6O7S\n39OIcTRKiWDl/4yQLyhqcj2Qp7dfdavkcwivHgS2/t6Q55WZ0VekgTs0Eb71dErI\nFjceBJ+flrwwATGJbjE9BLxGe0BRCWvnYN6q92c81UMkoe+s0DG+E0hve9uZn3a9\nd3dXaUCvAgMBAAECggEAHQ+01t1TFYZ2IJNmJdXgUwkDzsVf07FuYBZW1rUnHQ+Y\nc45XoTtNaBYazG6nTrtpTHetZkz9q5BgoCJdwNNkefraGGWyMt3sOVVZJKQcV/LB\nAvxu0jypJmJr3iHzuOOEMQ6TMbP7AP396KGVBfXTZOFWuMuJuFFlC6RgmcWuK4hC\nLT2kSen86FIkCVGYxhPFY93Lk9QgzCpv9YauLwRojF2pWVUdbPBPJNUq5wz2lMMC\n7gXiG3O/uCE0mUZMi9dW0Vrl6izU1ZmNtw73bcN36Gt1Dj5LZNP5XXo5jylMpDhH\n9mZ5LghWMnAiLVkBinfWXnTMC9H+wIFmvBPtct+ofQKBgQDMduxPR4w2ONNKWgtE\nsF0/ZMLWY3hLW5U/opSg8LHVf7Go0UstxztYhWA0EVFjGCLCFR1Ojggbca5iusy9\n7mXa8ALDjVvfPT5tICZQjbzNTpQRWXfP9R4DpIyPiElS/1AWnlTRWZl/d3sHNHpM\n9Cv+Rm3CMykc1iAUOinSeBCEjQKBgQDDlU2oHvxNG/1JLK21waJK1TREZUOC4RGI\nPapkNBCNSztf3+jbKs09YM6PUxmy8nmbGo8OKSa5z4k41j5UkH6HEsDaSpKUHNFL\n4qZpwWdwTpvxQZHMQpOYByaSMKO2FmZh8UMSW1xeJ2uV2HeHmtQz1tH+s19iMKUO\n2kyH2VQxKwKBgGnTI3vlDC0EPFe/QxXKMnkdLbrIwPo/7H+DJmomKeTWsp0ttjt7\nYrvuTFymmfkwBM1vIDwIRyntLNTs2gtz2EP49XVBNMvWZvkUKsCGm7GnefuA0wJP\nW7mG8TlY0Jqkik8qo7u3JDtVG9ge0S4DMsHoseZRlHXYXcIaWIsWmXYBAoGALHgl\nCQXKjenAREQBVyMouGUTlj2EBR0RdG248UGZRdcGL/1kH3jy43LAZHwbisFw/uAi\nCLE4meTjKWYlE+sqqaGM8dUk0MJgoCVvevo7f6CP+mHTOaMlldqCXZjrkDo1my1U\n97aIIOxLnO1z+AQvHX5JjuTP2i5/SQo/fl/esbMCgYAlhMFYy28l4EG+0hTL2veQ\nuJge3s7HyJChR8c4d37fmEiAAN/nGAKVRMrNJCGeEVoo65kxHz1JWz6VzGP+UKPX\n+WqqsLwES1PTqVWPfz+H8ol56aOfsRni+/wOjv8tpeGoy0YwO5copbyB156ES2qs\nqC6FGh6eglJax/51K+qSuQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "oursky-node-test@oursky-test-384118.iam.gserviceaccount.com",
+  "client_id": "114069640235602602881",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/oursky-node-test%40oursky-test-384118.iam.gserviceaccount.com"
+}
