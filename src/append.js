@@ -7,7 +7,7 @@ const range = `${sheetName}!A:C`;
 
 function writeUserData(auth) {
   const sheets = google.sheets({ version: "v4", auth });
-  const values = [["elvis", "rocha", "elvis.rocha@gmail.com"]];
+  const values = [["mario", "camacho", "mario.camacho@gmail.com"]];
   try {
     sheets.spreadsheets.values
       .append({
