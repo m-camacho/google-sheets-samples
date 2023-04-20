@@ -1,5 +1,5 @@
 const { google } = require("googleapis");
-const { authorize } = require("../auth");
+const { authorize } = require("./auth");
 
 const spreadsheetId = "1xUS59aImQCHCfyhrM4MH_8yar55fkPvTHBh5Cw6nQuw";
 const sheetName = "playground";
