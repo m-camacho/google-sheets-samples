@@ -1,32 +1,37 @@
 const { google } = require("googleapis");
-const { authorize } = require("./src/auth");
+const { authorize } = require("./auth");
 
 const spreadsheetId = "1xUS59aImQCHCfyhrM4MH_8yar55fkPvTHBh5Cw6nQuw";
-const sheetName = "data";
-const range = `${sheetName}!A2:C`;
+const sheetName = "playground";
+const range = `${sheetName}!A:C`;
 
-async function listTelescopeNetwork(auth) {
+const values = [["mario", "camacho", "mario.camacho2@gmail.com"]];
+
+async function writeSpreedSheet() {
+  const auth = await authorize();
   const sheets = google.sheets({ version: "v4", auth });
-  const res = await sheets.spreadsheets.values.get({
-    spreadsheetId,
-    range,
-  });
-  const rows = res.data.values;
-  if (!rows || rows.length === 0) {
-    console.log("No data found.");
+  try {
+    const response = await sheets.spreadsheets.values.append({
+      spreadsheetId,
+      range,
+      valueInputOption: "RAW",
+      resource: {
+        values,
+      },
+    });
+    console.log(JSON.stringify(response.data, null, 2));
+  } catch (err) {
+    console.log(JSON.stringify(err, null, 2));
     return;
   }
-
-  console.log("Name, email:");
-  rows.forEach((row) => {
-    console.log(`${row[0]} ${row[1]}, ${row[2]}`);
-  });
 }
 
-authorize().then(listTelescopeNetwork).catch(console.error);
+writeSpreedSheet();
 
 // Interesting/important notes
 
 // https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets.values/append
 // https://developers.google.com/sheets/api/quickstart/nodejs
 // https://developers.google.com/sheets/api/guides/values#javascript
+
+// https://cloud.google.com/nodejs/docs/reference/google-auth-library/latest#json-web-tokens
