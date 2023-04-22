@@ -1,4 +1,6 @@
+.env
 
 auth/
 ignore/
 node_modules/
+secrets/

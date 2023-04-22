@@ -1,5 +1,5 @@
 const { google } = require("googleapis");
-const { authorize } = require("./auth");
+const { authorize } = require("src/auth");
 
 const spreadsheetId = "1xUS59aImQCHCfyhrM4MH_8yar55fkPvTHBh5Cw6nQuw";
 const sheetName = "playground";
@@ -29,6 +29,9 @@ async function writeSpreedSheet() {
 writeSpreedSheet();
 
 // Interesting/important notes
+
+// https://cloud.google.com/nodejs/docs/reference/google-auth-library/latest#choosing-the-correct-credential-type-automatically
+// https://stackoverflow.com/questions/38949318/google-sheets-api-returns-the-caller-does-not-have-permission-when-using-serve
 
 // https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets.values/append
 // https://developers.google.com/sheets/api/quickstart/nodejs

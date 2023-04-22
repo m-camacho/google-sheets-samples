@@ -27,4 +27,6 @@ function writeUserData(auth) {
   }
 }
 
+module.exports = { writeUserData };
+
 authorize().then(writeUserData).catch(console.error);
